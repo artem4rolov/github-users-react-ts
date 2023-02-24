@@ -6,7 +6,7 @@ import styles from "./ThemeSwitcher.module.scss";
 
 export const ThemeSwitcher = () => {
   const [isDark, setDark] = useState(false);
-  const themeText = isDark ? "Light" : "Dark";
+  const themeText = isDark ? "Light " : "Dark ";
   const ThemeIcon = isDark ? SunIcon : MoonIcon;
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const ThemeSwitcher = () => {
   }, [isDark]);
 
   return (
-    <div className={styles.ThemeSwitcher} onClick={() => setDark(!isDark)}>
+    <div className={styles.switcher} onClick={() => setDark(!isDark)}>
       <span>{themeText}</span>
       <ThemeIcon className={styles.icon} />
     </div>

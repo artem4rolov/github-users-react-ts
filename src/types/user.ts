@@ -1,4 +1,4 @@
-export type LocalGithybUser = {
+export type LocalGithubUser = {
   login: string;
   id: number;
   avatar: string;

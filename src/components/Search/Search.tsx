@@ -8,12 +8,16 @@ interface SearchProps {
   onSubmit: (text: string) => void;
 }
 
+// тип для полей формы
+// конкретно сейчас это один инпут
 type FormFields = {
   username: HTMLInputElement;
 };
 
 export const Search = ({ hasError, onSubmit }: SearchProps) => {
   // типизируем event
+  // даем понять форме, что мы используем ее внутренние поля с помощью типа FormFields
+  // это дает возможность не использовать useRef
   const handleSubmit = (
     event: React.FormEvent<HTMLFormElement & FormFields>
   ) => {

@@ -24,7 +24,8 @@ export const Search = ({ hasError, onSubmit }: SearchProps) => {
     event.preventDefault();
     const text = event.currentTarget.username.value;
 
-    if (text) {
+    // убираем из строки поиска пробелы на всякий пожарный
+    if (text.trim()) {
       onSubmit(text);
       event.currentTarget.reset();
     }
@@ -40,7 +41,7 @@ export const Search = ({ hasError, onSubmit }: SearchProps) => {
           type="text"
           className={styles.textField}
           id="search"
-          name="user_name"
+          name="username"
           placeholder="Search Github username..."
         />
         {hasError && <div className={styles.error}>No result</div>}

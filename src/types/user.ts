@@ -1,6 +1,7 @@
 export type LocalGithubUser = {
   login: string;
-  id: number;
+  // id не нужен для работы
+  // id: number;
   avatar: string;
   name: string;
   company: string;
